@@ -11,7 +11,15 @@
 
   <body>
   <img src="/assets/intro.jpeg" alt="map" />
+  <div>
+
+    <% if current_user.present? %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+    <% end %>
+  </div>
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
   </body>
 </html>
 
